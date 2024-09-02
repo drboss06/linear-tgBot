@@ -16,6 +16,10 @@ user_mapping = {
     # "linear_user_id": "telegram_user_id"
 }
 
+@app.route('/test', methods=['GET'])
+def test():
+    return jsonify({'status': 'ok'}), 200
+
 @app.route('/webhook', methods=['POST'])
 def linear_webhook():
     data = request.json
