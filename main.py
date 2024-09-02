@@ -1,11 +1,15 @@
 from flask import Flask, request, jsonify
 from telegram import Bot
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
 
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+
 bot = Bot(token=TELEGRAM_TOKEN)
 
 user_mapping = {
